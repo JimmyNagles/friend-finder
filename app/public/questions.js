@@ -73,8 +73,41 @@ const cQuestion=$("<h3>"+x.question+"</h3>")
 cContent.append(cQuestion)
 //appends content to card div
 const cardAction= $("<div class='card-action'>")
-const choices=$("<input type='checkbox' />")
-cardAction.append(choices)
+
+
+
+const choicesDiv=$('<div class="input-field col s12">')
+
+const select=$('<select>')
+
+choicesDiv.append(select)
+
+const option=$('<option value="" disabled selected>Choose your option</option>')
+const optionA=$('<option value="1">Strongly Disagree</option>')
+const optionB=$('<option value="2"> Disagree</option>')
+const optionC=$('<option value="3">Neither Agree or Disagree</option>')
+const optionD=$('<option value="4">Agree</option>')
+const optionE=$('<option value="5">Strongly Agree</option>')
+
+select.append(option)
+select.append(optionA)
+select.append(optionB)
+select.append(optionC)
+select.append(optionD)
+select.append(optionE)
+
+// {<div class="input-field col s12">
+// <select>
+//   <option value="" disabled selected>Choose your option</option>
+//   <option value="1">Option 1</option>
+//   <option value="2">Option 2</option>
+//   <option value="3">Option 3</option>
+// </select>
+// <label>Materialize Select</label>
+// </div> }
+
+
+cardAction.append(choicesDiv)
 
 cContent.append(cardAction)
 
