@@ -18,7 +18,7 @@ const surveyQuestions=[{
 },{
 
     number:2,
-    question: "Eating out insted of home made food?",
+    question: "Eating out instead of homemade food?",
     options:[
         "strongly disagree",
         "disagree",
@@ -42,7 +42,7 @@ const surveyQuestions=[{
 },{
 
     number:4,
-    question:"Reading Over Watching tv?",
+    question:"Reading over watching tv?",
     options:[
         "strongly disagree",
         "disagree",
@@ -55,7 +55,7 @@ const surveyQuestions=[{
 },{
 
     number:5,
-    question:"Going to a Park is a great plan?",
+    question:"Going to a park is a great plan?",
     options:[
         "strongly disagree",
         "disagree",
@@ -188,29 +188,42 @@ cDiv.append(cContent)
 
 $("#con").append(cDiv)
 
-$("#submit").on("click",function(){
 
-console.log("btn clicked")
-
-    event.preventDefault();
-
-  var name=  $("#firstName").val().trim();
-   var image=  $("#imageLink").val().trim();
-
-   for (let o = 0; o < 10; o++) {
-       
-          console.log("Question number ",o,$('select')[o].value)
-    
-       
-   }
-
-  
-
-
-  
-
-})
 
 
 
 });
+
+
+$("#submit").on("click",function(){
+
+    console.log("btn clicked")
+    
+        event.preventDefault();
+        
+        const answers=[]
+      var name=  $("#firstName").val().trim();
+       var image=  $("#imageLink").val().trim();
+    
+       answers.push({
+    
+        name,
+        image
+       })
+       
+    
+       for (let o = 0; o < 10; o++) {
+           
+    
+           
+    
+           answers.push($('select')[o].value)
+    
+        }
+        
+        
+        console.log(answers)
+    
+    
+    
+    })
