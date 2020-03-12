@@ -4,6 +4,8 @@ const path = require("path");
 const PORT =  3000;
 const app = express();
 
+require("./app/routing/htmlRoutes.js")(app);
+
 
 
 
